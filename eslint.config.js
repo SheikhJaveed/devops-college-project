@@ -43,7 +43,7 @@ export default [
       globals: {
         ...globals.browser,
         ...globals.node,
-        ...vitest.environments.globals.globals,
+        ...vitest.environments.env.globals,
       },
     },
     rules: {
