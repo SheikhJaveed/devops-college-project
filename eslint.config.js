@@ -3,6 +3,8 @@ import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 
+import vitest from 'eslint-plugin-vitest'
+
 export default [
   { ignores: ['dist'] },
   {
@@ -28,6 +30,24 @@ export default [
         'warn',
         { allowConstantExport: true },
       ],
+    },
+  },
+
+
+  {
+    files: ['**/*.test.{js,jsx}'],
+    plugins: {
+      vitest,
+    },
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+        ...vitest.environments.env.globals,
+      },
+    },
+    rules: {
+      ...vitest.configs.recommended.rules,
     },
   },
 ]
