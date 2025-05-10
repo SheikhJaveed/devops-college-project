@@ -3,10 +3,7 @@ import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 
-
-import vitestPlugin from 'eslint-plugin-vitest'
-
-const { configs: vitestConfigs, environments: vitestEnvironments } = vitestPlugin
+import vitest from 'eslint-plugin-vitest'
 
 export default [
   { ignores: ['dist'] },
