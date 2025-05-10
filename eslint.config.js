@@ -30,4 +30,22 @@ export default [
       ],
     },
   },
+
+
+  {
+    files: ['**/*.test.{js,jsx}'],
+    plugins: {
+      vitest,
+    },
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+        ...vitest.environments.globals.globals,
+      },
+    },
+    rules: {
+      ...vitest.configs.recommended.rules,
+    },
+  },
 ]
